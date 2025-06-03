@@ -1,12 +1,8 @@
 # app/models/service.py
-# from app.models.base import Base
 from .base import Base  # relative import
-# relationships already defined
-# user = relationship("User", back_populates="services") => ForeignKey('users.id')
-# shipments = relationship("Shipment", back_populates="service")
 
 from sqlalchemy import func 
-from sqlalchemy import ForeignKey, Table, Column, Integer, String, DateTime
+from sqlalchemy import ForeignKey, Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 
 class Service(Base):

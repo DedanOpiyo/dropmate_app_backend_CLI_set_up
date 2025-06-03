@@ -3,8 +3,8 @@
 from .base import Base  # relative import
 
 from sqlalchemy import func
-from sqlalchemy import ForeignKey, Table, Column, Integer, String, DateTime, Boolean
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import ForeignKey, Column, Integer, DateTime, Boolean
+from sqlalchemy.orm import relationship
 
 class ShippingCost(Base):
     __tablename__ = 'shipping_costs'

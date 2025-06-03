@@ -29,15 +29,10 @@ class ValidateService:
             return url
         raise ValueError("Image URL must start with http:// or https://")
 
-# try:
-#     validated = ValidateService(
+#     validate Test =>
 #         user_id='12',
 #         company_name='DropMate Ltd',
 #         service_name='Express Shipping',
 #         cost='200',
 #         license='DML-009823',
 #         image_url='https://example.com/logo.png'
-#     )
-#     print("Service validated:", vars(validated))
-# except Exception as e:
-#     print("Validation error:", e)

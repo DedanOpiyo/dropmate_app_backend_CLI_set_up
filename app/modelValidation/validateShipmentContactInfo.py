@@ -84,18 +84,3 @@ class ValidateShipmentContactInfo:
         if not isinstance(value, str) or not value.strip():
             raise ValueError(f"{field} must be a non-empty string.")
         return value.strip()
-
-# try:
-#     validated = ValidateShipmentContactInfo(
-#         shipment_id="10",
-#         sender_name="Alice Johnson",
-#         sender_phone="0721345678",
-#         sender_address="123 Sender Street, Nairobi",
-#         receiver_name="Bob Kamau",
-#         receiver_phone="0788456789",
-#         receiver_address="456 Receiver Ave, Mombasa",
-#         info_provider_id="2"
-#     )
-#     print("Validated:", vars(validated))
-# except Exception as e:
-#     print("Validation failed:", e)

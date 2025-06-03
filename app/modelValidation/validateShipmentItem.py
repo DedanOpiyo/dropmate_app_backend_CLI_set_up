@@ -76,18 +76,3 @@ class ValidateShipmentItem:
     @category_id.setter
     def category_id(self, val):
         self._category_id = string_int_value_validator(val, "Category ID")
-
-
-# try:
-#     validated_item = ValidateShipmentItem(
-#         shipment_id="5",
-#         item_name="Laptop",
-#         description="15-inch MacBook Pro",
-#         weight="2.5",
-#         quantity="2",
-#         value="3000",
-#         category_id="1"
-#     )
-#     print("Validated item:", vars(validated_item))
-# except Exception as e:
-#     print("Validation failed:", e)

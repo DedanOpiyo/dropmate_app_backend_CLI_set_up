@@ -2,8 +2,7 @@
 # from app.models.base import Base
 from .base import Base  # relative import
 
-from sqlalchemy import func
-from sqlalchemy import ForeignKey, Column, Integer, String, DateTime, Float
+from sqlalchemy import ForeignKey, Column, Integer, String, Float
 from sqlalchemy.orm import relationship
 
 class RouteTag(Base):

@@ -113,24 +113,3 @@ class ValidateShipment:
                 raise TypeError("Shipping cost string must contain only digits")
         else:
             raise TypeError("Shipping cost must be a number or digit string")
-
-##
-# def test_validate_shipment_with_string_ids():
-#     try:
-#         shipment = validateShipment(
-#             user_id='5',
-#             origin_location_id='10',
-#             destination_location_id='20',
-#             route_id='30',
-#             service_id='40',
-#             status='in transit',
-#             shipment_type='person',
-#             shipping_cost='150'
-#         )
-#         print("PASS: Validation with string IDs succeeded.")
-#         print(vars(shipment))
-#     except Exception as e:
-#         print("FAIL:", e)
-
-# testr = test_validate_shipment_with_string_ids()
-# print(testr)

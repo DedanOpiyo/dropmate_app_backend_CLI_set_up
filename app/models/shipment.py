@@ -4,8 +4,8 @@ from .base import Base  # relative import
 from enum import Enum as PyEnum
 
 from sqlalchemy import func, Enum
-from sqlalchemy import ForeignKey, Table, Column, Integer, String, DateTime
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import ForeignKey, Column, Integer, DateTime
+from sqlalchemy.orm import relationship
 
 class ShipmentStatus(PyEnum):
     pending = "pending"
@@ -87,67 +87,5 @@ class Shipment(Base):
             f"status={self.status}"
             f"shipment_type={self.shipment_type}"
             f"shipping_cost={self.shipping_cost}")
-
-
-# # Defining relationships after all classes are available
-
-# from sqlalchemy.orm import relationship
-# from location import Location
-# from route import Route
-# from shipmentItem import ShipmentItem
-# from drop_log import DropLog
-# from service import Service
-
-# Shipment.service = relationship('Service', back_populates='shipments')
-# Shipment.origin = relationship('Location', foreign_keys=[Shipment.origin_location_id], back_populates='shipments_originating')
-# Shipment.destination = relationship('Location', foreign_keys=[Shipment.destination_location_id], back_populates='shipments_arriving')
-# Shipment.route = relationship('Route', back_populates='shipments')
-# Shipment.shipment_items = relationship('ShipmentItem', back_populates='shipment')
-# Shipment.drop_logs = relationship('DropLog', back_populates='shipment')
-
-
-
-
-
-
-
-
-# # Method to Get Borders for a Shipment
-# def get_shipment_borders(session, shipment_id):
-#     shipment = session.query(Shipment).filter_by(id=shipment_id).first()
-#     if not shipment or not shipment.route:
-#         return []
-
-#     borders = (
-#         session.query(Location)
-#         .join(RouteLocation, RouteLocation.location_id == Location.id)
-#         .filter(
-#             RouteLocation.route_id == shipment.route.id,
-#             Location.is_border == True
-#         )
-#         .all()
-#     )
-#     return borders
-
-# #  1. Get All Shipments from a Particular Location
-# # Given a location ID
-# location = session.query(Location).get(location_id)
-# shipments_from_location = location.shipments_originating
-# Or directly query:
-# shipments_from_location = session.query(Shipment).filter_by(origin_location_id=location_id).all()
-
-# #  2. Get All Shipments Expected to Arrive at a Particular Destination
-# # Using the relationship
-# location = session.query(Location).get(location_id)
-# shipments_to_location = location.shipments_arriving
-# Or directly query:
-# shipments_to_location = session.query(Shipment).filter_by(destination_location_id=location_id).all()
-
-# # extending the queries to filter by status and also by type:
-# # All delivered shipments from this location
-# session.query(Shipment).filter_by(origin_location_id=location_id, status=ShipmentStatus.delivered).all()
-
-# # All "goods" type shipments arriving at this location
-# session.query(Shipment).filter_by(destination_location_id=location_id, shipment_type=ShipmentType.goods).all()
 
 

@@ -136,13 +136,3 @@ class ValidateUser():
             raise TypeError("Profile type must be a string or ProfileType enum.")
 
         self._profile_type = profile
-
-
-# Sample user validation =>
-#     real_name="John Doe",
-#     username="johnd2",
-#     email="john@example.com",
-#     phone_number="1234567890",
-#     password="secure123!A",
-#     role="user",
-#     profile_type="customer"  # Can be a string or ProfileType.customer

@@ -223,24 +223,6 @@ if __name__ == '__main__':
     print(f"Seeded shipping costs for {len(shipping_costs)} routes.")
 
 
-    # shipping_cost_id was deleted...
-
-    # # GOAL: Step : Update routes with the matching shipping_cost_id
-    # # we can loop through the seeded ShippingCost records and update each corresponding Route:
-
-    # shipping_costs = session.query(ShippingCost).all()
-
-    # updated_count = 0
-    # for sc in shipping_costs:
-    #     route = session.query(Route).filter_by(id=sc.route_id).first()
-    #     if route:
-    #         route.shipping_cost_id = sc.id
-    #         updated_count += 1
-
-    # session.commit()
-    # print(f"Updated {updated_count} routes with shipping_cost_id.")
-
-
     # Get a list of users (ensure users are in the DB)
     users = session.query(User).filter_by(profile_type=ProfileType.company).all() # filter where role/profile_type is company 
 
@@ -572,77 +554,5 @@ if __name__ == '__main__':
 
     print(f"Seeded {len(contact_infos)} shipment contact info records for {len(shipments)} shipments.")
 
-
-
-
-
-    # # Get sample origin and destination locations
-    # locations = session.query(Location).limit(10).all()
-    # route_groups = session.query(RouteGroup).all() # We need Location, RouteGroup, and ShippingCost entries (they're foreign key dependencies in Route model).
-
-    # if len(locations) < 2:
-    #     raise ValueError("Not enough locations to seed routes!")
-
-    # routes = []
-
-    # for _ in range(5):  # create 5 sample routes
-    #     origin, destination = random.sample(locations, 2)
-
-    #     # Optional route group
-    #     group = random.choice(route_groups) if route_groups else None
-
-    #     # First create Route without shipping_cost FK (circular)
-    #     new_route = Route(
-    #         origin=origin,
-    #         destination=destination,
-    #         scope=random.choice(list(BorderType)),
-    #         route_group=group
-    #     )
-
-    #     session.add(new_route)
-    #     session.commit()  # get route.id before adding ShippingCost
-
-    #     # Now create ShippingCost and assign to the route
-    #     cost = ShippingCost(
-    #         route_id=new_route.id,
-    #         cost_value=random.randint(500, 5000),
-    #         start_date=datetime.utcnow(),
-    #         end_date=datetime.utcnow() + timedelta(days=90),
-    #         active=True
-    #     )
-    #     session.add(cost)
-    #     session.commit()
-
-    #     routes.append(new_route)
-
-    # print(f"Seeded {len(routes)} routes with associated shipping costs.")
-
-
-
-
-    # print("Seeded Location hierarchy successfully!")
-
-
-
-    # freebies = []
-    # for company in companies:
-    #     for i in range(random.randint(1,5)):
-    #         dev = random.choice(devs)
-    #         if company not in dev.companies:
-    #             dev.companies.append(company)
-    #             session.add(dev)
-    #             session.commit()
-            
-    #         freebie = Freebie(
-    #             item_name=fake.unique.word(),
-    #             value=random.randint(40, 400),
-    #             company_id=company.id,
-    #             dev_id=dev.id
-    #         )
-
-    #         freebies.append(freebie)
-
-    # session.bulk_save_objects(freebies)
-    # session.commit()
 
     session.close() # close session

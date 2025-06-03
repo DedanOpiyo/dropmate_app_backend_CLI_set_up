@@ -52,14 +52,3 @@ class ValidateRoute:
             self._scope = value
         else:
             raise TypeError("Scope must be a string or BorderTypeRt enum")
-
-# try:
-#     validated = validateShipment(
-#         origin_location_id='12',
-#         destination_location_id='24',
-#         scope='intra_city',
-#         route_group_id='person'
-#     )
-#     print("Service validated:", vars(validated))
-# except Exception as e:
-#     print("Validation error:", e)   

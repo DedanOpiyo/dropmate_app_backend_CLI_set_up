@@ -5,11 +5,11 @@ from app.db import get_session
 def handle_add_shipment_items(shipment_id): # add_items_for_current_shipment
     while True:
         print("\n-- ADD SHIPMENT ITEM --")
-        item_name = input("Item name: ")
-        quantity = input("Quantity: ")
-        description = input("Description: ")
+        item_name = input("Item name (e.g. Laptop.5): ")
+        quantity = input("Quantity (e.g. 2): ")
+        description = input("Description (e.g. 2.15-inch MacBook Pro): ")
         weight = input("Weight (e.g. 2.5): ")
-        value = input("Value: ")
+        value = input("Value (e.g. 2000): ")
         category_id = input("Category ID: ")
 
         try:

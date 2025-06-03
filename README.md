@@ -14,7 +14,7 @@ For questions, suggestions, or contributions, feel free to reach out:
 
 - Email: [dedandedan2@gmail.com]
 
-- GitHub: https://github.com/yourusername
+- GitHub: https://github.com/DedanOpiyo?tab=repositories
 
 
 ## Introduction

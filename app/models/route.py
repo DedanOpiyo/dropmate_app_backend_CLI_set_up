@@ -1,10 +1,9 @@
 # app/models/route.py
-# from app.models.base import Base
 from .base import Base  # relative import
 import enum
 
 from sqlalchemy import func, Enum
-from sqlalchemy import ForeignKey, Column, Integer, String, DateTime
+from sqlalchemy import ForeignKey, Column, Integer, DateTime
 from sqlalchemy.orm import relationship
 
 class BorderTypeRt(enum.Enum): # similar to borders table
@@ -75,8 +74,3 @@ class Route(Base):
             f"scope={self.scope}"
             f"created_at={self.created_at}"
             f"updated_at={self.updated_at}")
-
-# # Shipping cost for a route
-# route = session.query(Route).first()
-# print(route.shipping_cost_id)
-# print(route.shipping_cost.cost_value)  # via relationship

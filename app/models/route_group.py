@@ -1,5 +1,4 @@
 # app/models/route_group.py
-# from app.models.base import Base
 from .base import Base  # relative import
 
 from sqlalchemy import func
@@ -63,13 +62,3 @@ class RouteGroup(Base): # not a bridge, but enable route grouping through SQLAlc
             f"region_location_id={self.region_location_id}"
             f"created_at={self.created_at}"
             f"updated_at={self.updated_at}")
-
-
-# # 1. Accessing the actual location name from a RouteGroup instance/HQ
-# # route_group_instance.region_location.name -/self
-
-# # 2. Accessing routes of the group
-# # route_group_instance.routes -/self
-# then loop through them and access all fields i.e:
-# for rtes in route_group_instance.routes:
-#     print(rtes.id, rtes.origin_location_id, rtes.destination_location_id, rtes.shipping_cost) etc.

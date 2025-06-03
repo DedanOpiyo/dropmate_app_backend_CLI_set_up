@@ -1,5 +1,4 @@
 # app/models/user.py
-# from app.models.base import Base
 from .base import Base  # relative import # not absolute ones (to helps avoid circular issues and improve modularity)
 import enum
 

@@ -9,12 +9,12 @@ def handle_sender_receiver_input(shipment_data):
     print(f"handle_sender_receiver_input called: {shipment_id}")
 
     sender_name = input("Sender Name: ")
-    sender_phone = input("Sender Phone: ")
-    sender_address = input("Sender Address: ")
+    sender_phone = input("Sender Phone  (e.g. 0721345678): ")
+    sender_address = input("Sender Address  (e.g. 123 Sender Street, Nairobi): ")
 
     receiver_name = input("Receiver Name: ")
-    receiver_phone = input("Receiver Phone: ")
-    receiver_address = input("Receiver Address: ")
+    receiver_phone = input("Receiver Phone  (e.g. 0788456789): ")
+    receiver_address = input("Receiver Address  (e.g. 456 Receiver Ave, Mombasa): ")
 
     try:
         validated = ValidateShipmentContactInfo(

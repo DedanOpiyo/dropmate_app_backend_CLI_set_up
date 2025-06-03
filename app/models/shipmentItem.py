@@ -1,9 +1,7 @@
 # app/models/shipmentItem.py
-# from app.models.base import Base
 from .base import Base  # relative import
 
-from sqlalchemy import func
-from sqlalchemy import ForeignKey, Table, Column, Integer, String, Float, Text
+from sqlalchemy import ForeignKey, Column, Integer, String, Float, Text
 from sqlalchemy.orm import relationship
 
 class ShipmentItem(Base):
