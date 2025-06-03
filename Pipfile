@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+alembic = "*"
+ipdb = "*"
+sqlalchemy = "1.4.42"
+faker = "*"
+choice = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
